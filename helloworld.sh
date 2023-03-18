@@ -1,2 +1,0 @@
-echo "HelloWorld"
-echo "HelloAgain"
