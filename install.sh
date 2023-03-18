@@ -3,6 +3,11 @@ if [ ! $VALIDATOR ]; then
     echo 'export MONIKER='\"${MONIKER}\" >> $HOME/.bash_profile
 fi
 
+sudo rm -rf /usr/local/go
+curl -Ls https://go.dev/dl/go1.19.5.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
+eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
+eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
+
 # Download project binaries
 mkdir -p $HOME/.quasarnode/cosmovisor/genesis/bin
 wget -O $HOME/.quasarnode/cosmovisor/genesis/bin/quasard https://github.com/quasar-finance/binary-release/raw/main/v0.0.2-alpha-11/quasarnoded-linux-amd64
