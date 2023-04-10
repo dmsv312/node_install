@@ -7,3 +7,4 @@ sudo apt-get install -y algorand-devtools
 cd /var/lib/algorand/genesis/testnet
 sudo cp genesis.json /var/lib/algorand/
 systemctl restart algorand
+goal node status -d /var/lib/algorand
