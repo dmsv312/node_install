@@ -1,6 +1,6 @@
 apt update && apt upgrade -y
 apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
-VALIDATOR=nodesUP
+VALIDATOR="nodesUP"
 BINARY=nibid
 CHAIN_ID=nibiru-itn-1
 cd $HOME
@@ -15,7 +15,7 @@ go version
 git clone https://github.com/NibiruChain/nibiru && cd nibiru
 git checkout v0.19.2
 make install
-$BINARY init "$VALIDATOR" --chain-id $CHAIN_ID
+$BINARY init $VALIDATOR --chain-id $CHAIN_ID
 wget -O $HOME/.nibid/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/genesis.json"
 curl -s https://snapshots2-testnet.nodejumper.io/nibiru-testnet/addrbook.json > $HOME/.nibid/config/addrbook.json
 nibid config chain-id nibiru-itn-1
