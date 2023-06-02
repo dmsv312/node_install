@@ -17,7 +17,7 @@ go version
 git clone https://github.com/NibiruChain/nibiru && cd nibiru
 git checkout v0.19.2
 make install
-nibid init ${VALIDATOR} --chain-id nibiru-itn-1
+nibid init "${VALIDATOR}" --chain-id nibiru-itn-1
 wget -O $HOME/.nibid/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/genesis.json"
 curl -s https://snapshots2-testnet.nodejumper.io/nibiru-testnet/addrbook.json > $HOME/.nibid/config/addrbook.json
 nibid config chain-id nibiru-itn-1
