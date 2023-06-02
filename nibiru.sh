@@ -1,6 +1,5 @@
 apt update && apt upgrade -y
 apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
-VALIDATOR="n83707"
 BINARY=nibid
 CHAIN_ID=nibiru-itn-1
 cd $HOME
