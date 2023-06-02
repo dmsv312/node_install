@@ -1,10 +1,8 @@
 apt update && apt upgrade -y
 apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
+VALIDATOR=nodesUP
 BINARY=nibid
 CHAIN_ID=nibiru-itn-1
-echo 'export VALIDATOR='\"${VALIDATOR}\" >> $HOME/.bash_profile
-echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
-source $HOME/.bash_profile
 cd $HOME
 ver="1.19.1" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
