@@ -1,4 +1,8 @@
 cd $HOME
+if [ ! $VALIDATOR ]; then
+    read -p "Enter validator name: " VALIDATOR
+    echo 'export VALIDATOR='\"${VALIDATOR}\" >> $HOME/.bash_profile
+fi
 ver="1.19" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
@@ -10,7 +14,7 @@ go version
 git clone https://github.com/lavanet/lava && cd lava
 git checkout v0.12.1
 make install
-lavad init digital-am --chain-id lava-testnet-1
+lavad init $VALIDATOR --chain-id lava-testnet-1
 cd $HOME
 git clone https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T
 cp $HOME/GHFkqmTzpdNLDd6T/testnet-1/genesis_json/genesis.json $HOME/.lava/config
