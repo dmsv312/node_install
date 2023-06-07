@@ -1,8 +1,6 @@
 cd $HOME
-if [ ! $VALIDATOR ]; then
-    read -p "Enter validator name: " VALIDATOR
-    echo 'export VALIDATOR='\"${VALIDATOR}\" >> $HOME/.bash_profile
-fi
+read -p "Enter validator name: " VALIDATOR
+echo 'export VALIDATOR='\"${VALIDATOR}\" >> $HOME/.bash_profile
 ver="1.19" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
