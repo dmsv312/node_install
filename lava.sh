@@ -1,4 +1,5 @@
 cd $HOME
+echo 'hello'
 read -p "Enter validator name: " VALIDATOR
 echo 'export VALIDATOR='\"${VALIDATOR}\" >> $HOME/.bash_profile
 ver="1.19" && \
