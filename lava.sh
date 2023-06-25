@@ -11,7 +11,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 git clone https://github.com/lavanet/lava && cd lava
-git checkout 0.13.1
+git checkout v0.14.0
 make install
 lavad init $VALIDATOR --chain-id lava-testnet-1
 cd $HOME
