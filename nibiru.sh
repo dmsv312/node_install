@@ -22,7 +22,7 @@ git clone https://github.com/NibiruChain/nibiru && cd nibiru
 git checkout v0.19.2
 make install
 $BINARY init $VALIDATOR --chain-id $CHAIN_ID
-wget -O $HOME/.nibid/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/genesis.json"
+curl -s https://rpc.itn-1.nibiru.fi/genesis | jq -r .result.genesis > $HOME/.nibid/config/genesis.json
 curl -s https://snapshots2-testnet.nodejumper.io/nibiru-testnet/addrbook.json > $HOME/.nibid/config/addrbook.json
 nibid config chain-id nibiru-itn-1
 nibid config keyring-backend os
