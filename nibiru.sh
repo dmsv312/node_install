@@ -43,7 +43,7 @@ sed -i.bak -e "s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:9190\"%; s%^add
 sed -i.bak -e "s%^node = \"tcp://localhost:26657\"%node = \"tcp://localhost:36657\"%" $HOME/.nibid/config/client.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:36656\"/" $HOME/.nibid/config/config.toml
-curl https://snapshots2-testnet.nodejumper.io/nibiru-testnet/nibiru-itn-1_2023-07-04.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.nibid
+curl https://snapshots2-testnet.nodejumper.io/nibiru-testnet/nibiru-itn-1_2023-07-06.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.nibid
 tee /etc/systemd/system/nibid.service > /dev/null <<EOF
 [Unit]
 Description=nibid
