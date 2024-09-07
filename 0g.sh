@@ -35,6 +35,19 @@ cd $HOME
 sudo apt update
 sudo apt install make unzip clang pkg-config lz4 libssl-dev build-essential git jq ncdu bsdmainutils htop -y < "/dev/null"
 
+echo -e '\n\e[42mInstall Go\e[0m\n' && sleep 1
+cd $HOME
+VERSION=1.21.13
+wget -O go.tar.gz https://go.dev/dl/go$VERSION.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go.tar.gz && rm go.tar.gz
+echo 'export GOROOT=/usr/local/go' >> $HOME/.bash_profile
+echo 'export GOPATH=$HOME/go' >> $HOME/.bash_profile
+echo 'export GO111MODULE=on' >> $HOME/.bash_profile
+echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bash_profile && . $HOME/.bash_profile
+go version
+
+echo -e '\n\e[42mInstall software\e[0m\n' && sleep 1
+
 sleep 1
 cd $HOME
 rm -rf 0g-chain
